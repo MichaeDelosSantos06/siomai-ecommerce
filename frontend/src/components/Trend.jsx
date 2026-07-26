@@ -22,12 +22,12 @@ const Trend = () => {
                     customers.</p>
                 </div>
                 <div className="flex gap-[2%] justify-center">
-                    {product.length === 0 ? (
+                    {product?.length === 0 ? (
                         <div className="flex items-center justify-center w-full py-20">
                             <p className="font-poppins text-[18px] text-gray-500">No Featured Product Available</p>
                         </div>
                     ) : (
-                        product.map((hot) => (
+                        product && product.map((hot) => (
                             <div key={hot.id}
                                 className="group relative flex flex-col items-center rounded-[12px] w-[21%] h-[360px] mt-[4%] bg-white
                                 shadow-md

@@ -19,6 +19,7 @@ npm-debug.log*
 # IDE
 .vscode/
 .idea/
+.env
 
 # OS
 .DS_Store
