@@ -37,6 +37,12 @@ app.use(
     })
 )
 app.use(express.json());
+app.get("/", (req, res) => {
+  res.json({
+    status: "OK",
+    message: "Inventory Backend is running 🚀",
+  });
+});
 app.use('/api', UserRoute);
 app.use('/api', ProductRoute);
 app.use('/api', CartRoute);
@@ -52,12 +58,7 @@ app.listen(PORT, () => {
     console.log(`Serve start listening to PORT ${PORT}`);
 });
 
-app.get("/", (req, res) => {
-  res.json({
-    status: "OK",
-    message: "Inventory Backend is running 🚀",
-  });
-});
+
 
 
 
