@@ -52,6 +52,13 @@ app.listen(PORT, () => {
     console.log(`Serve start listening to PORT ${PORT}`);
 });
 
+app.get("/", (req, res) => {
+  res.json({
+    status: "OK",
+    message: "Inventory Backend is running 🚀",
+  });
+});
+
 
 
 
