@@ -21,7 +21,7 @@ import AdminRoute from "./routes/adminDashboardRoutes.js";
 app.use(helmet());
 app.use(
     cors({
-        origin: process.env.CLIENT_PORT,
+        origin: process.env.CLIENT_URL,
         credentials: true,
         methods: ["GET", "POST", "DELETE", "PUT"]
     })
