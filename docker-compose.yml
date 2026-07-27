@@ -1,10 +1,8 @@
 services:
   postgres:
     image: postgres:17
-
     container_name: inventory-postgres
-
-    restart: always
+    restart: unless-stopped
 
     environment:
       POSTGRES_USER: postgres
@@ -27,9 +25,14 @@ services:
 
     ports:
       - "3000:3000"
+      - "5555:5555"
 
     env_file:
       - ./backend/.env
+
+    volumes:
+      - ./backend:/app
+      - /app/node_modules
 
   frontend:
     build:
@@ -45,6 +48,10 @@ services:
 
     ports:
       - "5173:5173"
+
+    volumes:
+      - ./frontend:/app
+      - /app/node_modules
 
 volumes:
   postgres_data:
