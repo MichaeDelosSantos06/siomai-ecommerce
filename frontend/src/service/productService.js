@@ -1,12 +1,12 @@
 import authApi from "../api/authApi";
 
 export const displayHotPicks = async () => {
-    const response = await authApi.get("/product/trending");
+    const response = await authApi.get("/api/product/trending");
     return response.data;
 }
 
 export const addToCart = async (id) => {
-    const response = await authApi.post("/product/add-to-cart", {id});
+    const response = await authApi.post("/api/product/add-to-cart", {id});
     return response.data;
 }
 
