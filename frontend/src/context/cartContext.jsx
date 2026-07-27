@@ -56,7 +56,7 @@ export const CartProvider = ({children}) => {
                 }
 
                 const response = await readItemsService();
-                // console.log("THE DATA:", response.data);
+                console.log("THE DATA:", response.data);
                 
                 setCartItems(response.data ?? []);
             }catch(error){
